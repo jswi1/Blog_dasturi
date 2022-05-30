@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Bloglar</h1>
+    <form method="post" action="">{% csrf_token %}
+        <input type="text" name="sar" placeholder="Sarlavha">
+        <input type="date" name="sana" placeholder="Sana">
+        <input type="text" name="mav" placeholder="Mavzu">
+        <input type="text" name="matn" placeholder="Matn">
+        <select name="maqola">
+            {% for i in m %}
+                <option value="{{i.id}}">{{i.sar}}</option>
+            {% endfofr %}
+        </select>
+        <button type="submit">Qoshish</button>
+    </form>
+</body>
+</html>
